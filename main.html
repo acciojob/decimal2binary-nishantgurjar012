@@ -1,16 +1,40 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <title>Decimal to Binary Conversion</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+  <script>
+    function decimalToBinary(decimalNumber) {
+      // Base case: if the input number is 0, the binary representation is also 0
+      if (decimalNumber === 0) {
+        return "0";
+      }
+
+      let binary = "";
+
+      // Convert the decimal number to binary using repeated division by 2
+      while (decimalNumber > 0) {
+        const remainder = decimalNumber % 2;
+        binary = remainder + binary;
+        decimalNumber = Math.floor(decimalNumber / 2);
+      }
+
+      return binary;
+    }
+
+    // Test the function
+    const decimalNumber1 = 7;
+    console.log(decimalToBinary(decimalNumber1)); // Output: "111"
+
+    const decimalNumber2 = 10;
+    console.log(decimalToBinary(decimalNumber2)); // Output: "1010"
+
+    const decimalNumber3 = 33;
+    console.log(decimalToBinary(decimalNumber3)); // Output: "100001"
+  </script>
 
 </body>
-
 </html>
+
